@@ -6,9 +6,9 @@ import orcamento.Orcamento;
 
 public class CalculadoraDeDescontos {
     public BigDecimal calcular(Orcamento orcamento) {
-        Desconto desconto = new OrcamentoComMaisDeCinco(
+        Desconto cadeiaDedescontos = new OrcamentoComMaisDeCinco(
                 new DescontoOrcamentoMaisQuinhetos(
                         new Semdesconto(null)));
-        return desconto.calcular(orcamento);
+        return cadeiaDedescontos.calcular(orcamento);
     }
 }
