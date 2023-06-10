@@ -1,21 +1,18 @@
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
-import orcamento.Orcamento;
-import pedido.Pedido;
+import pedido.GeraPedido;
+import pedido.GeraPedidoHandler;
 
-public class Testepedidos {
-    public static void main(String[] args) {
+public class TestePedidos {
+    
+public static void main(String[] args) {
+    String cliente = "Julliane";
+    BigDecimal valorOrcamento = new BigDecimal("1000");
+    int quantidadeDeItens = 10;
 
-        Orcamento orcamento = new Orcamento(new BigDecimal("600"), 4);
-        String cliente = "Ana da Silva";
-        LocalDateTime data = LocalDateTime.now();
+    GeraPedido gerador = new GeraPedido(cliente, valorOrcamento, quantidadeDeItens);
+    GeraPedidoHandler handler = new GeraPedidoHandler();
+    handler.execute(gerador);
+}
 
-        Pedido pedido = new Pedido(cliente, data, orcamento);
-       
-        System.out.println("Salvar pedido no banco de dados");
-        System.out.println("Enviar email com banco de dados do novo pedido");
-
-
-    }
 }
