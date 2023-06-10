@@ -22,7 +22,7 @@ public class Orcamento {
         this.valor = this.valor.subtract(valorDoDescontoExtra);
     }
 
-    public void aprovar(){
+    public void aprovar() {
         this.situacao.aprovar(this);
     }
 
