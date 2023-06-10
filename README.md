@@ -1,3 +1,6 @@
 # Estabelecimento
 
-* Práticas de Design Patterns
+* Template Method
+* Strategy
+* Decorator
+* Observer
