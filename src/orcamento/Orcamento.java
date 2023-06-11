@@ -3,6 +3,7 @@ package orcamento;
 import java.math.BigDecimal;
 
 import orcamento.situacao.EmAnalise;
+import orcamento.situacao.Finalizado;
 import orcamento.situacao.SituacaoOrcamento;
 
 public class Orcamento {
@@ -48,6 +49,10 @@ public class Orcamento {
 
     public void setSituacao(SituacaoOrcamento situacao) {
         this.situacao = situacao;
+    }
+
+    public boolean isFinalizado(){
+        return situacao instanceof Finalizado;
     }
 
 }
