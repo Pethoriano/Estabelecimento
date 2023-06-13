@@ -3,6 +3,7 @@ import java.util.Arrays;
 import pedido.GeraPedido;
 import pedido.GeraPedidoHandler;
 import pedido.acao.EnviarEmail;
+import pedido.acao.LogDePedido;
 import pedido.acao.SalvarNoBD;
 
 public class TestePedidos {
@@ -15,8 +16,9 @@ public class TestePedidos {
         GeraPedido gerador = new GeraPedido(cliente, valorOrcamento, quantidadeDeItens);
         GeraPedidoHandler handler = new GeraPedidoHandler(Arrays.asList(
                 new SalvarNoBD(),
-                new EnviarEmail()));
-        handler.execute(gerador);
+                new EnviarEmail(),
+                new LogDePedido()));
+        handler.executar(gerador);
     }
 
 }
