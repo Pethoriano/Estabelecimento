@@ -19,7 +19,7 @@ public class RegistroDeOrcamento {
         if (!orcamento.isFinalizado()) {
             throw new DomainException("Orçamento não finalizado");
         }
-        Map<String, Object> dados = Map.of(
+        Map.of(
                 "valor", orcamento.getValor(),
                 "quantidadeDeItens", orcamento.getQuantidadeDeItens());
         http.post(url, null);
